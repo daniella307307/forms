@@ -15,7 +15,7 @@ const HomeScreen = () => {
         <TouchableOpacity style={styles.button} onPress={() => router.push('/components/SignupScreen')}>
           <Text style={styles.buttonText}>Contact Us</Text>
         </TouchableOpacity>
-        <TouchableOpacity style={styles.button} onPress={() => router.push('/componentsValideLogin')}>
+        <TouchableOpacity style={styles.button} onPress={() => router.push('/components/ValideLogin')}>
           <Text style={styles.buttonText}>Validate</Text>
         </TouchableOpacity>
       </View>

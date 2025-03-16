@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, TextInput, Button, StyleSheet, Alert, TouchableOpacity } from "react-native";
 import { Formik } from "formik";
 import * as Yup from "yup";
+import { useRouter } from "expo-router";
 
 const validationSchema = Yup.object().shape({
   name: Yup.string().required("Name is required"),
@@ -10,6 +11,7 @@ const validationSchema = Yup.object().shape({
 });
 
 export default function ValidateLogin() {
+  const router = useRouter();
   const handleSubmit = async (values: any, { setSubmitting }: any) => {
     try {
       const response = await fetch("https://localhost:5000/signup", {
@@ -22,6 +24,7 @@ export default function ValidateLogin() {
       const result = await response.json();
       if (response.ok) {
         Alert.alert("Success", "Sign-up successful");
+        router.navigate('/')
       } else {
         Alert.alert("Error", result.message || "Sign-up failed");
       }
@@ -123,7 +126,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   linkText: {
-    color: "#1e90ff",
+    color: "green",
     textAlign: "center",
     marginTop: 15,
   },

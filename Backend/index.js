@@ -7,7 +7,10 @@ require("dotenv").config();
 
 const app = express();
 app.use(express.json());
-app.use(cors());
+corsOptions={
+    origin: '*',
+}
+app.use(cors(corsOptions));
 
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI, {
