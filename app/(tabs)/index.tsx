@@ -19,11 +19,6 @@ const HomeScreen = () => {
           <Text style={styles.buttonText}>Validate</Text>
         </TouchableOpacity>
       </View>
-      <View style={styles.bottomContainer}>
-        <View style={styles.semiCircle}>
-          <Text style={styles.footerText}>Stay Connected</Text>
-        </View>
-      </View>
     </View>
   );
 };

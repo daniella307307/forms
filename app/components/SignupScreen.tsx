@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { View, Text, TextInput, Button, StyleSheet, Alert } from "react-native";
+import { View, Text, TextInput, Button, StyleSheet, Alert, TouchableOpacity } from "react-native";
 
 export default function FormHandling() {
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
@@ -38,7 +38,9 @@ export default function FormHandling() {
         onChangeText={(value) => handleChange("message", value)}
         multiline
       />
-      <Button title="Submit" onPress={handleSubmit} />
+      <TouchableOpacity style={styles.submit} onPress={()=>{handleSubmit}}>
+        <Text>Submit</Text>
+      </TouchableOpacity>
     </View>
   );
 }
@@ -65,4 +67,10 @@ const styles = StyleSheet.create({
   textArea: {
     height: 100,
   },
+  submit:{
+    backgroundColor:"green",
+    alignItems: "center",
+    padding: 10,
+    borderRadius:10
+  }
 });
